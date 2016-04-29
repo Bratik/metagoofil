@@ -45,3 +45,5 @@ Changelog 2.2:
 bratik's version:
 -----------------
 -Fixed the google search script
+  -Searching was not working anymore
+  -Searching was not showing all results
