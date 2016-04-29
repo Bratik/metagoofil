@@ -4,6 +4,10 @@
 *www.edge-security.com              *
 *cmartorella@edge-security.com      *
 *************************************
+*Edited by bratik                   *
+*contact@bratik.fr                  *
+*************************************
+
 
 
 What is this?
@@ -34,3 +38,10 @@ Changelog 2.2:
 -Fixed email regexp
 -Fixed leading space in results
 -Fixed local analysis
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+bratik's version:
+-----------------
+-Fixed the google search script
