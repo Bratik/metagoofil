@@ -3,6 +3,7 @@ import httplib, sys
 import myparser
 import re
 import time
+import requests
 
 class search_google:
 	def __init__(self,word,limit,start,filetype):
@@ -18,13 +19,8 @@ class search_google:
 		self.counter=start
 		
 	def do_search_files(self):
-		h = httplib.HTTP(self.server)
-		h.putrequest('GET', "/search?num="+self.quantity+"&start=" + str(self.counter) + "&hl=en&meta=&q=filetype:"+self.filetype+"%20site:" + self.word)
-		h.putheader('Host', self.hostname)
-		h.putheader('User-agent', self.userAgent)	
-		h.endheaders()
-		returncode, returnmsg, headers = h.getreply()
-		self.results = h.getfile().read()
+		r=requests.get("http://"+self.server+"/search?num="+self.quantity+"&start=" + str(self.counter) + "&hl=en&meta=&filter=0&q=filetype:"+self.filetype+"%20site:" + self.word)
+		self.results = r.content
 		self.totalresults+= self.results
 
 	def get_emails(self):
